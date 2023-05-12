@@ -43,13 +43,14 @@ class _HomePageState extends State<HomePage> {
         onTabChange: (index)=> navigateBottomBar(index) ,
       ),
       appBar: AppBar(
+        title: Text('Home'),
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: Builder(
           builder: (context) => IconButton(
             icon: const Icon(
               Icons.menu,
-              color: Colors.black,
+              color: Colors.white,
             ),
             onPressed: (){
               Scaffold.of(context).openDrawer();

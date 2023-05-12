@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 
 import 'package:portfolio_resume/cardItem.dart';
 import 'package:portfolio_resume/home_page.dart';
+import 'package:portfolio_resume/pages/exp/Atx.dart';
+import 'package:portfolio_resume/pages/exp/duogo.dart';
 import 'package:portfolio_resume/pages/exp/emraz.dart';
+import 'package:portfolio_resume/pages/exp/facebook.dart';
 
 
 class WorkExp extends StatefulWidget {
@@ -66,7 +69,7 @@ class _WorkExpState extends State<WorkExp> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => HomePage(),
+                              builder: (context) => Duogo(),
                             ),
                           );
                         },
@@ -95,7 +98,7 @@ class _WorkExpState extends State<WorkExp> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => HomePage(),
+                              builder: (context) => Facebook(),
                             ),
                           );
                         },
@@ -124,7 +127,7 @@ class _WorkExpState extends State<WorkExp> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => HomePage(),
+                              builder: (context) => Atx(),
                             ),
                           );
                         },

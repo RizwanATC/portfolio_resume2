@@ -15,29 +15,33 @@ class _BottomNavBarState extends State<BottomNavBar> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+        color: Colors.cyan.shade800,
+        padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 10),
         child: GNav(
+          gap: 8,
+
+          backgroundColor: Colors.cyan.shade800,
           color: Colors.white,
-          activeColor: Colors.grey.shade700,
-          tabActiveBorder: Border.all(color: Colors.white),
-          tabBackgroundColor: Colors.grey.shade100,
-          tabBorderRadius: 10,
+          activeColor: Colors.cyan,
+          tabBorderRadius: 20,
+          tabBackgroundColor: Colors.grey.shade700,
           onTabChange: (value) => widget.onTabChange!(value),
+          padding: EdgeInsets.all(16),
           tabs: [
             GButton(
-              icon: Icons.home,
+              icon: Icons.account_circle_sharp,
               text: 'About Me',
             ),
             GButton(
-              icon: Icons.home,
+              icon: Icons.add_chart,
               text: 'Skills',
             ),
             GButton(
-              icon: Icons.home,
+              icon: Icons.shopping_bag_outlined,
               text: 'Experience',
             ),
             GButton(
-              icon: Icons.home,
+              icon: Icons.book,
               text: 'Education',
             ),
           ],
