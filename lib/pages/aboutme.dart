@@ -23,6 +23,10 @@ class _AboutMeState extends State<AboutMe> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+            )
+            ,
+            Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
