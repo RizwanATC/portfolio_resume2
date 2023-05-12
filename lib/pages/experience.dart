@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:portfolio_resume/cardItem.dart';
 import 'package:portfolio_resume/home_page.dart';
+import 'package:portfolio_resume/pages/exp/emraz.dart';
+
 
 class WorkExp extends StatefulWidget {
   const WorkExp({Key? key}) : super(key: key);
@@ -11,6 +13,7 @@ class WorkExp extends StatefulWidget {
 }
 
 class _WorkExpState extends State<WorkExp> {
+
 
 
   @override
@@ -34,7 +37,7 @@ class _WorkExpState extends State<WorkExp> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => HomePage(),
+                              builder: (context) => Emraz(),
                             ),
                           );
                         },
