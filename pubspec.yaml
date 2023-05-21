@@ -68,6 +68,42 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/profile.png
+    - assets/emraz1.png
+    - assets/emraz2.png
+    - assets/emraz3.png
+    - assets/emraz4.png
+    - assets/emraz5.png
+    - assets/emraz6.png
+    - assets/emraz7.png
+    - assets/emraz8.png
+    - assets/emraz9.png
+    - assets/emraz10.png
+    - assets/emraz11.png
+    - assets/ibox1.png
+    - assets/ibox1.png
+    - assets/ibox2.png
+    - assets/ibox3.png
+    - assets/ibox4.png
+    - assets/ibox5.png
+    - assets/ibox6.png
+    - assets/ibox7.png
+    - assets/ibox8.png
+    - assets/ibox9.png
+    - assets/ibox10.png
+    - assets/ibox11.png
+    - assets/fb1.png
+    - assets/fb2.png
+    - assets/fb3.png
+    - assets/atx1.png
+    - assets/atx2.png
+    - assets/atx4.png
+    - assets/atx6.png
+    - assets/atx7.png
+    - assets/atx8.png
+    - assets/atx9.png
+    - assets/atx10.png
+    - assets/atx11.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
