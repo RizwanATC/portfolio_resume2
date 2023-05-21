@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_resume/about_page.dart';
+
 import 'package:portfolio_resume/components/bottom_nav_bar.dart';
 import 'package:portfolio_resume/pages/aboutme.dart';
 import 'package:portfolio_resume/pages/education.dart';
