@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_resume/about_page.dart';
 import 'package:portfolio_resume/components/bottom_nav_bar.dart';
 import 'package:portfolio_resume/pages/aboutme.dart';
 import 'package:portfolio_resume/pages/education.dart';
@@ -78,25 +79,28 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Padding(
-                padding: EdgeInsets.only(left: 25),
+              padding: EdgeInsets.only(left: 25),
+              child: GestureDetector(
+                onTap: () {
+                  // Add your redirection logic here
+                  // For example, you can use Navigator.push() to navigate to another page
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomePage()),
+                  );
+                },
                 child: ListTile(
                   leading: Icon(
-                    Icons.home,color: Colors.white,
+                    Icons.home,
+                    color: Colors.white,
                   ),
-                  title: Text('Home',
-                  style: TextStyle(fontSize: 18,color: Colors.white),),
+                  title: Text(
+                    'Home',
+                    style: TextStyle(fontSize: 18, color: Colors.white),
+                  ),
                 ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(left: 25),
-              child: ListTile(
-                leading: Icon(
-                  Icons.info,color: Colors.white,
-                ),
-                title: Text('About',
-                  style: TextStyle(fontSize: 18,color: Colors.white),),
               ),
-            )
+            ),
 
 
           ],

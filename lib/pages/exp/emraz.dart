@@ -15,15 +15,26 @@ class _EmrazState extends State<Emraz> {
   bool _isExpandedlanguage = false;
   bool _isExpandedIdo = false;
   bool _isExpandedFeatures = false;
+  bool _isExpandedReference = false;
+
 
 
 
 
   int _currentIndex = 0;
   List<String> _images = [
-    'assets/profile.png',
-    'assets/profile.png',
-    'assets/profile.png'
+    'assets/emraz1.png',
+    'assets/emraz2.png',
+    'assets/emraz3.png',
+    'assets/emraz4.png',
+    'assets/emraz5.png',
+    'assets/emraz6.png',
+    'assets/emraz7.png',
+    'assets/emraz8.png',
+    'assets/emraz9.png',
+    'assets/emraz10.png',
+    'assets/emraz11.png',
+
   ];
 
   @override
@@ -70,7 +81,7 @@ class _EmrazState extends State<Emraz> {
                     borderRadius: BorderRadius.circular(10.0),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.grey.withOpacity(0.8),
+                        color: Colors.transparent,
                         spreadRadius: 2,
                         blurRadius: 5,
                         offset: Offset(0, 3), // changes the position of shadow
@@ -79,11 +90,28 @@ class _EmrazState extends State<Emraz> {
                   ),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10.0),
-                    child: Image.asset(
-                      imageUrl,
-                      fit: BoxFit.scaleDown,
-                      width: 250,
-                      height: 250.0,
+                    child: GestureDetector(
+                      onTap: () {
+                        // Handle the tap event to show a larger version of the image
+                        // You can show a dialog, navigate to a new page, or use any other approach based on your requirements
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return AlertDialog(
+                              content: Image.asset(
+                                imageUrl,
+                                fit: BoxFit.scaleDown,
+                              ),
+                            );
+                          },
+                        );
+                      },
+                      child: Image.asset(
+                        imageUrl,
+                        fit: BoxFit.scaleDown,
+                        width: 250,
+                        height: 250.0,
+                      ),
                     ),
                   ),
                 );
@@ -107,7 +135,7 @@ class _EmrazState extends State<Emraz> {
               activeIndex: _currentIndex,
               count: _images.length,
               effect: WormEffect(
-                activeDotColor: Colors.blueAccent,
+                activeDotColor: Colors.white,
                 dotHeight: 8,
                 dotWidth: 8,
                 spacing: 8,
@@ -299,7 +327,7 @@ class _EmrazState extends State<Emraz> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(left: 16.0,right: 16.0,top: 16,bottom: 16),
+                      padding: EdgeInsets.only(left: 16.0,right: 16.0,top: 16),
                       child: Card(
                         elevation: 4,
 
@@ -340,69 +368,75 @@ class _EmrazState extends State<Emraz> {
                                           crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
                                             Container(
-                                              width: 350,
-                                              child: Column(
-                                                children: [
-                                                  Text(
-                                                    'User Creation: The application allows users to create their accounts by providing their basic information.',
-                                                    style: GoogleFonts.rubik(
-                                                      textStyle: TextStyle(
-                                                        fontWeight: FontWeight.w100,
-                                                        fontSize: 12.0,
+                                              constraints: BoxConstraints(maxWidth: 350), // Limit the maximum width of the container
+                                              child: SingleChildScrollView(
+                                                scrollDirection: Axis.horizontal, // Set the scroll direction to horizontal
+                                                child: Column(
+                                                  crossAxisAlignment: CrossAxisAlignment.start, // Align text to the left
+                                                  children: [
+                                                    SizedBox(height: 10),
+                                                    Text(
+                                                      'User Creation: The application allows users to create \ntheir accounts by providing their basic information.',
+                                                      style: GoogleFonts.rubik(
+                                                        textStyle: TextStyle(
+                                                          fontWeight: FontWeight.w100,
+                                                          fontSize: 12.0,
+                                                        ),
                                                       ),
                                                     ),
-                                                  ),
-                                                  SizedBox(height: 10),
-                                                  Text(
-                                                    'Login: The users can log in to their accounts by providing the correct credentials.',
-                                                    style: GoogleFonts.rubik(
-                                                      textStyle: TextStyle(
-                                                        fontWeight: FontWeight.w100,
-                                                        fontSize: 12.0,
+                                                    SizedBox(height: 10),
+                                                    Text(
+                                                      'Login: The users can log in to their accounts by \nproviding the correct credentials.',
+                                                      style: GoogleFonts.rubik(
+                                                        textStyle: TextStyle(
+                                                          fontWeight: FontWeight.w100,
+                                                          fontSize: 12.0,
+                                                        ),
                                                       ),
                                                     ),
-                                                  ),
-                                                  SizedBox(height: 10),
-                                                  Text(
-                                                    'Update Profile: Users can update their profiles by editing their information on their profiles.',
-                                                    style: GoogleFonts.rubik(
-                                                      textStyle: TextStyle(
-                                                        fontWeight: FontWeight.w100,
-                                                        fontSize: 12.0,
+                                                    SizedBox(height: 10),
+                                                    Text(
+                                                      'Update Profile: Users can update their profiles by \nediting their information on their profiles.',
+                                                      style: GoogleFonts.rubik(
+                                                        textStyle: TextStyle(
+                                                          fontWeight: FontWeight.w100,
+                                                          fontSize: 12.0,
+                                                        ),
                                                       ),
                                                     ),
-                                                  ),
-                                                  SizedBox(height: 10),
-                                                  Text(
-                                                    'Language Select: Users can choose their preferred language to use in the application.',
-                                                    style: GoogleFonts.rubik(
-                                                      textStyle: TextStyle(
-                                                        fontWeight: FontWeight.w100,
-                                                        fontSize: 12.0,
+                                                    SizedBox(height: 10),
+                                                    Text(
+                                                      'Language Select: Users can choose their preferred \nlanguage to use in the application.',
+                                                      style: GoogleFonts.rubik(
+                                                        textStyle: TextStyle(
+                                                          fontWeight: FontWeight.w100,
+                                                          fontSize: 12.0,
+                                                        ),
                                                       ),
                                                     ),
-                                                  ),
-                                                  SizedBox(height: 10),
-                                                  Text(
-                                                    'Booking: Users can book packages for travel by choosing their preferred destination and package.',
-                                                    style: GoogleFonts.rubik(
-                                                      textStyle: TextStyle(
-                                                        fontWeight: FontWeight.w100,
-                                                        fontSize: 12.0,
+                                                    SizedBox(height: 10),
+                                                    Text(
+                                                      'Booking: Users can book packages for travel by choosing \ntheir preferred destination and package.',
+                                                      style: GoogleFonts.rubik(
+                                                        textStyle: TextStyle(
+                                                          fontWeight: FontWeight.w100,
+                                                          fontSize: 12.0,
+                                                        ),
                                                       ),
                                                     ),
-                                                  ),
-                                                  SizedBox(height: 10),
-                                                  Text(
-                                                    'Payment: Users can make payments for the selected package using their preferred payment method.',
-                                                    style: GoogleFonts.rubik(
-                                                      textStyle: TextStyle(
-                                                        fontWeight: FontWeight.w100,
-                                                        fontSize: 12.0,
+                                                    SizedBox(height: 10),
+                                                    Text(
+                                                      'Payment: Users can make payments for the selected \npackage using their preferred payment method.',
+                                                      style: GoogleFonts.rubik(
+                                                        textStyle: TextStyle(
+                                                          fontWeight: FontWeight.w100,
+                                                          fontSize: 12.0,
+                                                        ),
                                                       ),
                                                     ),
-                                                  ),
-                                                ],
+                                                    SizedBox(height: 10),
+                                                  ],
+                                                ),
                                               ),
                                             )
 
@@ -423,6 +457,98 @@ class _EmrazState extends State<Emraz> {
                         ),
                       ),
                     ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 16.0,right: 16.0,top: 16,bottom: 16),
+                      child: Card(
+                        elevation: 4,
+
+                        child: InkWell(
+                          onTap: () {
+                            setState(() {
+                              _isExpandedReference = !_isExpandedReference;
+                            });
+                          },
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(top: 16,left: 16,bottom: 16),
+                                child: Text(
+                                  'Reference',
+                                  style: GoogleFonts.rubik(
+                                    textStyle: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+
+                              AnimatedCrossFade(
+                                firstChild: Container(),
+                                secondChild: Padding(
+                                    padding: EdgeInsets.only(
+                                      left: 16.0,
+                                      bottom: 16.0,
+                                    ),
+                                    child:
+                                    Row(
+                                      children: [
+                                        // Add some spacing between the stick and the text
+                                        Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              constraints: BoxConstraints(maxWidth: 350), // Limit the maximum width of the container
+                                              child: SingleChildScrollView(
+                                                scrollDirection: Axis.horizontal, // Set the scroll direction to horizontal
+                                                child: Column(
+                                                  crossAxisAlignment: CrossAxisAlignment.start, // Align text to the left
+                                                  children: [
+                                                    SizedBox(height: 10),
+                                                    Text(
+                                                      'Mohd Firdaus\nHead of Department\nEmrazGo Sdn Bhd\n016-7746039',
+                                                      style: GoogleFonts.rubik(
+                                                        textStyle: TextStyle(
+                                                          fontWeight: FontWeight.w100,
+                                                          fontSize: 12.0,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    SizedBox(height: 10),
+                                                    Text(
+                                                      'Mohd Izzairi\nChief Technology Officer (CTO)\nEmrazgo\n012-2643164',
+                                                      style: GoogleFonts.rubik(
+                                                        textStyle: TextStyle(
+                                                          fontWeight: FontWeight.w100,
+                                                          fontSize: 12.0,
+                                                        ),
+                                                      ),
+                                                    ),
+
+                                                  ],
+                                                ),
+                                              ),
+                                            )
+
+
+                                          ],
+                                        ),
+                                      ],
+                                    )
+
+                                ),
+                                crossFadeState: _isExpandedReference
+                                    ? CrossFadeState.showSecond
+                                    : CrossFadeState.showFirst,
+                                duration: Duration(milliseconds: 300),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+
 
                   ],
                 ),
